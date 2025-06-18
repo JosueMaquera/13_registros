@@ -34,4 +34,17 @@ int main () {
         cout << "Ingrese su salario: ";
         cin >> empleados[i].salario;
     }
+
+    for (int i = 0; i < cantidad_empleados; i++) {
+        cout << "--------Empleado " << i + 1 << "----------" << endl;
+        cout << "Numero de empleado: " << empleados[i].numero_empleado << endl;
+        cout << "Nombre: " << empleados[i].nombre << endl;
+        cout << "Ventas: ";
+        for (int j = 0; j < 12; j++) {
+            cout << empleados[i].ventas[j] << " ";
+            
+        }
+        cout << endl;
+        cout << "Salario: " << empleados[i].salario << endl;
+    }
 }
