@@ -49,7 +49,7 @@ int main() {
         if (empleados[i].ventasTotales > mayorVentas) {
             mayorVentas = empleados[i].ventasTotales;
         }
-        
+
         cout << "\n-------- Empleado #" << i + 1 << " ----------" << endl;
         cout << "Numero de empleado: " << empleados[i].numeroEmpleado << endl;
         cout << "Nombre: " << empleados[i].nombre << endl;
@@ -58,9 +58,16 @@ int main() {
             cout << empleados[i].ventas[j] << " ";
         }
         cout << "\nVentas totales: " << empleados[i].ventasTotales << endl;
-        cout << "Salario: " << empleados[i].salario << endl;
+        if (empleados[i].ventasTotales > 100) {
+            empleados[i].salario += empleados[i].salario * 0.1;
+            cout << "Salario: " << empleados[i].salario << endl;
+            cout << ">> Se aplico un aumento del 10% al salario por ventas altas." << endl;
+        } else {
+            cout << "Salario: " << empleados[i].salario << endl;
+            cout << ">> No se aplicó aumento salarial." << endl;
+        }
     }
-
+    
     for (int i = 0; i < cantidadEmpleados; i++) {
         if (mayorVentas == empleados[i].ventasTotales) {
             cout << "\n-----------------------------------------" << endl;
@@ -69,6 +76,7 @@ int main() {
             cout << "Nombre: " << empleados[i].nombre << endl;
             cout << "Ventas totales: " << empleados[i].ventasTotales << endl;
         }
+
     }
 
     return 0;
