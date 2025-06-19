@@ -67,7 +67,7 @@ int main() {
             cout << ">> No se aplicó aumento salarial." << endl;
         }
     }
-    
+
     for (int i = 0; i < cantidadEmpleados; i++) {
         if (mayorVentas == empleados[i].ventasTotales) {
             cout << "\n-----------------------------------------" << endl;
@@ -76,8 +76,20 @@ int main() {
             cout << "Nombre: " << empleados[i].nombre << endl;
             cout << "Ventas totales: " << empleados[i].ventasTotales << endl;
         }
-
     }
+
+    bool encabezadoMostrado = false;
+
+    for (int i = 0; i < cantidadEmpleados; i++) {
+        if (empleados[i].ventas[11] < 30) {
+            if (!encabezadoMostrado) {
+                cout << "\nEmpleados con ventas inferiores a 30 en el mes de diciembre: " <<endl;
+                encabezadoMostrado = true;
+            }
+            cout << "Numero de empleado: " << empleados[i].numeroEmpleado << endl;
+            cout << "Nombre: " << empleados[i].nombre << endl;            
+        }
+    } 
 
     return 0;
 }
