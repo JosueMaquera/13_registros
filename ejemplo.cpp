@@ -13,7 +13,6 @@ struct Empleado {
 
 int main() {
     int cantidadEmpleados;
-    int indiceMayorVentas = 0;
     float mayorVentas;
 
     Empleado empleados[100];
@@ -49,7 +48,6 @@ int main() {
     for (int i = 0; i < cantidadEmpleados; i++) {
         if (empleados[i].ventasTotales > mayorVentas) {
             mayorVentas = empleados[i].ventasTotales;
-            indiceMayorVentas = i;
         }
         
         cout << "\n-------- Empleado #" << i + 1 << " ----------" << endl;
@@ -63,11 +61,15 @@ int main() {
         cout << "Salario: " << empleados[i].salario << endl;
     }
 
-    cout << "\n-----------------------------------------" << endl;
-    cout << "Empleado con mayor ventas anuales:" << endl;
-    cout << "Numero de empleado: " << empleados[indiceMayorVentas].numeroEmpleado << endl;
-    cout << "Nombre: " << empleados[indiceMayorVentas].nombre << endl;
-    cout << "Ventas totales: " << empleados[indiceMayorVentas].ventasTotales << endl;
+    for (int i = 0; i < cantidadEmpleados; i++) {
+        if (mayorVentas == empleados[i].ventasTotales) {
+            cout << "\n-----------------------------------------" << endl;
+            cout << "Empleado con mayor ventas anuales:" << endl;
+            cout << "Numero de empleado: " << empleados[i].numeroEmpleado << endl;
+            cout << "Nombre: " << empleados[i].nombre << endl;
+            cout << "Ventas totales: " << empleados[i].ventasTotales << endl;
+        }
+    }
 
     return 0;
 }
