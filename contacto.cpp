@@ -86,6 +86,7 @@ int main() {
                     leerContacto(contacto, nombre, sexo, edad, email);
 
                     contactos[j] = contacto;
+                    cout << "Contacto modificado" << endl;
                 }
             }
             break;
@@ -99,6 +100,22 @@ int main() {
             }
 
             break;
+
+        case 5:
+            cout << "Ingrese el nombre del contacto a eliminar: ";
+            getline(cin, contactoModificado);
+            for (int j = 0; j < i; j++) {
+                if (contactos[j].nombre == contactoModificado) {
+                    for (int k = j; k < i - 1; k++) {
+                        contactos[k] = contactos[k + 1];
+                    }
+                    i -= 1; 
+                    cout << "Contacto eliminado" <<endl;
+                    break; 
+                }
+            }
+            break;
+
         case 0:
             return 0;
 
