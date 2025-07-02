@@ -1,23 +1,8 @@
 #include<iostream>
 #include<string>
+#include "contacto.h"
 
 using namespace std;
-
-struct Correo {
-    string usuario;
-    string dominio;
-};
-
-struct ContactoEmail {
-    string nombre;
-    string sexo;
-    int edad;
-    Correo email;
-};
-
-void leerContacto(ContactoEmail &, string, string, int, Correo);
-void leerCorreo(Correo &, string, string);
-void imprimeContacto(ContactoEmail &);
 
 int main() {
 
